@@ -17,5 +17,4 @@ export default function App() {
 
 function ThemedStatusBar() {
   const { isDark } = useAppContext();
-  return <StatusBar style={isDark ? 'light' : 'dark'} />;
 }

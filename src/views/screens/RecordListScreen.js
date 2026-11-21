@@ -38,7 +38,7 @@ export default function RecordListScreen({ navigation }) {
           <MaterialCommunityIcons
             name={ctrl.sortNewestFirst ? 'sort-calendar-descending' : 'sort-calendar-ascending'}
             size={24}
-            color={colors.text}
+            color="#FFFFFF"
           />
         </Pressable>
       ),

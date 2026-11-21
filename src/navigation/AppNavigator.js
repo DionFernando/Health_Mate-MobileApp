@@ -12,6 +12,17 @@ import RecordListScreen from '../views/screens/RecordListScreen';
 import SettingsScreen from '../views/screens/SettingsScreen';
 import StartupScreen from '../views/screens/StartupScreen';
 
+import { LinearGradient } from 'expo-linear-gradient';
+
+const HeaderGradient = () => (
+  <LinearGradient
+    colors={['#0B5D4B', '#009989']}
+    start={{ x: 0, y: 0 }}
+    end={{ x: 1, y: 0 }}
+    style={{ flex: 1 }}
+  />
+);
+
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -29,8 +40,9 @@ function MainTabs() {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textMuted,
         tabBarStyle: { backgroundColor: colors.surface, borderTopColor: colors.border },
-        headerStyle: { backgroundColor: colors.surface },
-        headerTintColor: colors.text,
+        headerBackground: HeaderGradient,
+        headerTintColor: '#FFFFFF',
+        headerTitleStyle: { fontWeight: '700' },
         tabBarIcon: ({ focused, color, size }) => (
           <MaterialCommunityIcons name={TAB_ICONS[route.name][focused ? 0 : 1]} size={size} color={color} />
         ),
@@ -71,8 +83,9 @@ export default function AppNavigator() {
     <NavigationContainer theme={navTheme}>
       <Stack.Navigator
         screenOptions={{
-          headerStyle: { backgroundColor: colors.surface },
-          headerTintColor: colors.text,
+          headerBackground: HeaderGradient,
+          headerTintColor: '#FFFFFF',
+          headerTitleStyle: { fontWeight: '700' },
           contentStyle: { backgroundColor: colors.background },
         }}
       >
